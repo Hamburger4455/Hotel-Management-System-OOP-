@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.ui_controller.MainWindowController">
+
+    <top>
+        <VBox>
+
+            <ToolBar prefHeight="40" minHeight="40">
+                <Button text="Refresh" onAction="#onRefreshClicked"/>
+                <Button text="New Reservation" onAction="#onNewReservationClicked"/>
+                <Button text="Check-In" onAction="#onCheckInClicked"/>
+                <Button text="Check-Out" onAction="#onCheckOutClicked"/>
+                <Button text="Cancel" onAction="#onCancelReservationClicked"/>
+                <Button text="Edit Reservation" onAction="#onEditReservationClicked"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Guests" onAction="#onOpenGuestList"/>
+            </ToolBar>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:8 10 8 10;">
+                <Label text="Guest:"/>
+                <TextField fx:id="txtGuest" promptText="Name or part of name"/>
+
+                <Label text="Room:"/>
+                <TextField fx:id="txtRoom" promptText="room id (number)"/>
+
+                <Label text="Status:"/>
+                <ComboBox fx:id="cbStatus" prefWidth="140"/>
+
+                <Label text="From:"/>
+                <DatePicker fx:id="dpFrom"/>
+
+                <Label text="To:"/>
+                <DatePicker fx:id="dpTo"/>
+
+                <Button text="Apply Filters" onAction="#onFilter"/>
+                <Button text="Clear" onAction="#onClearFilters"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="reservationTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colGuestId" text="Guest ID" prefWidth="80"/>
+                <TableColumn fx:id="colRoomId" text="Room ID" prefWidth="80"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                <TableColumn fx:id="colCheckIn" text="Check-in" prefWidth="120"/>
+                <TableColumn fx:id="colCheckOut" text="Check-out" prefWidth="120"/>
+                <TableColumn fx:id="colRoomStatus" text="Room Status" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

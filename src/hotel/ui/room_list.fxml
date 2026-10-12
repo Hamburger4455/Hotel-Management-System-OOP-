@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.ui_controller.RoomListController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Filter by type:"/>
+            <ComboBox fx:id="cbTypeFilter" promptText="All types"/>
+            <Label text="Filter by status:"/>
+            <ComboBox fx:id="cbStatusFilter" promptText="All statuses"/>
+            <Button text="Apply" onAction="#onApplyFilterClicked"/>
+            <Button text="Clear" onAction="#onClearFilterClicked"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="roomTable">
+            <columns>
+                <TableColumn fx:id="colId" text="Room ID" prefWidth="80"/>
+                <TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                <TableColumn fx:id="colRate" text="Rate/Night" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Set AVAILABLE" onAction="#onSetAvailableClicked"/>
+            <Button text="Set MAINTENANCE" onAction="#onSetMaintenanceClicked"/>
+            <Button text="Set OCCUPIED" onAction="#onSetOccupiedClicked"/>
+            <Button text="Edit Rate" onAction="#onEditRateClicked"/>
+            <Button text="Close" onAction="#onCloseClicked"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

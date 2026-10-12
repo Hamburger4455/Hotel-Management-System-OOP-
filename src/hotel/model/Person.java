@@ -1,0 +1,21 @@
+package hotel.model;
+
+public abstract class Person {
+
+    protected String fullName;
+
+    public Person() {
+    }
+
+    public Person(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+}

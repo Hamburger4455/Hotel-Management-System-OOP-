@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.ui_controller.GuestListController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Search name:"/>
+            <TextField fx:id="txtSearch" promptText="Enter name..."/>
+            <Button text="Search" onAction="#onSearchClicked"/>
+            <Button text="Show All" onAction="#onShowAllClicked"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="guestTable">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+                <TableColumn fx:id="colName" text="Full Name" prefWidth="200"/>
+                <TableColumn fx:id="colPhone" text="Phone" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Add" onAction="#onAddClicked"/>
+            <Button text="Edit" onAction="#onEditClicked"/>
+            <Button text="Delete" onAction="#onDeleteClicked"/>
+            <Button text="Close" onAction="#onCloseClicked"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

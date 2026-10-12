@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.ui_controller.GuestFormController">
+
+    <center>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Full name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtFullName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Phone:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtPhone" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Cancel" onAction="#onCancel"/>
+            <Button text="Save" onAction="#onSave"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

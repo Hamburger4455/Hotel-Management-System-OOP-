@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.ui_controller.DashboardController"
+            prefWidth="950.0" prefHeight="600.0"
+            style="-fx-background-color: #f4f4f4;">
+
+    <top>
+        <VBox spacing="5">
+            <padding>
+                <Insets top="15" right="15" bottom="10" left="15"/>
+            </padding>
+            <Label fx:id="lblWelcome"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <GridPane hgap="20" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="0"
+                      alignment="CENTER" spacing="5"
+                      prefWidth="200" prefHeight="80"
+                      style="-fx-background-color: white;
+                             -fx-padding: 10;
+                             -fx-border-color: #cccccc;
+                             -fx-border-radius: 5;
+                             -fx-background-radius: 5;">
+                    <Label text="Total Reservations"
+                           style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <Label fx:id="lblTotalReservations"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </VBox>
+
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="1"
+                      alignment="CENTER" spacing="5"
+                      prefWidth="200" prefHeight="80"
+                      style="-fx-background-color: white;
+                             -fx-padding: 10;
+                             -fx-border-color: #cccccc;
+                             -fx-border-radius: 5;
+                             -fx-background-radius: 5;">
+                    <Label text="Upcoming Reservations"
+                           style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <Label fx:id="lblUpcomingReservations"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </VBox>
+
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="2"
+                      alignment="CENTER" spacing="5"
+                      prefWidth="200" prefHeight="80"
+                      style="-fx-background-color: white;
+                             -fx-padding: 10;
+                             -fx-border-color: #cccccc;
+                             -fx-border-radius: 5;
+                             -fx-background-radius: 5;">
+                    <Label text="Occupied Rooms"
+                           style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <Label fx:id="lblOccupiedRooms"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </VBox>
+
+                <VBox GridPane.rowIndex="1" GridPane.columnIndex="0"
+                      alignment="CENTER" spacing="5"
+                      prefWidth="200" prefHeight="80"
+                      style="-fx-background-color: white;
+                             -fx-padding: 10;
+                             -fx-border-color: #cccccc;
+                             -fx-border-radius: 5;
+                             -fx-background-radius: 5;">
+                    <Label text="Available Rooms"
+                           style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <Label fx:id="lblAvailableRooms"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </VBox>
+
+                <VBox GridPane.rowIndex="1" GridPane.columnIndex="1"
+                      alignment="CENTER" spacing="5"
+                      prefWidth="200" prefHeight="80"
+                      style="-fx-background-color: white;
+                             -fx-padding: 10;
+                             -fx-border-color: #cccccc;
+                             -fx-border-radius: 5;
+                             -fx-background-radius: 5;">
+                    <Label text="Paid Revenue"
+                           style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <Label fx:id="lblPaidRevenue"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </VBox>
+
+                <VBox GridPane.rowIndex="1" GridPane.columnIndex="2"
+                      alignment="CENTER" spacing="5"
+                      prefWidth="200" prefHeight="80"
+                      style="-fx-background-color: white;
+                             -fx-padding: 10;
+                             -fx-border-color: #cccccc;
+                             -fx-border-radius: 5;
+                             -fx-background-radius: 5;">
+                    <Label text="Unpaid Invoices"
+                           style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <Label fx:id="lblUnpaidInvoices"
+                           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </VBox>
+
+            </GridPane>
+
+            <VBox spacing="10"
+                  style="-fx-background-color: white;
+                         -fx-padding: 10;
+                         -fx-border-color: #cccccc;
+                         -fx-border-radius: 5;
+                         -fx-background-radius: 5;">
+                <Label text="Today"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <Label text="Check-ins:" style="-fx-text-fill: #333333;"/>
+                    <Label fx:id="lblCheckinsToday"
+                           style="-fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                    <Label text="Check-outs:" style="-fx-text-fill: #333333;"/>
+                    <Label fx:id="lblCheckoutsToday"
+                           style="-fx-font-weight: bold; -fx-text-fill: #222222;"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="5" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <Label text="© 2025 Hotel Management System" style="-fx-text-fill: #555555"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Refresh" onAction="#onRefreshClicked"/>
+            <Button text="Open Reservations" onAction="#onOpenReservationsClicked"/>
+            <Button text="Guests" onAction="#onOpenGuestList"/>
+            <Button text="Rooms" onAction="#onOpenRoomList"/>
+            <Button text="Billing" onAction="#onOpenBilling"/>
+            <Button text="Logout" onAction="#onLogoutClicked"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hotel.ui_controller.BillingController">
+
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Select Invoice:"/>
+            <ComboBox fx:id="cbInvoice" prefWidth="250"/>
+            <Button text="Refresh" onAction="#onRefreshClicked"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="5">
+                <Label text="Reservation ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label fx:id="lblReservation" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Guest ID:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label fx:id="lblGuest" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Room ID:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Label fx:id="lblRoom" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Subtotal:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Label fx:id="lblSubtotal" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Tax:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <Label fx:id="lblTax" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Total:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <Label fx:id="lblTotal" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Paid:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <Label fx:id="lblPaid" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Label text="Payments:"/>
+
+            <TableView fx:id="paymentTable" prefHeight="220">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colAmount" text="Amount" prefWidth="100"/>
+                    <TableColumn fx:id="colMethod" text="Method" prefWidth="120"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="180"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Add Payment" onAction="#onAddPaymentClicked"/>
+            <Button text="Close" onAction="#onCloseClicked"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
